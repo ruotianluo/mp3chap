@@ -78,7 +78,7 @@ func main() {
 		element := fmt.Sprintf("chp%d", len(chaps))
 		tocchaps = append(tocchaps, element)
 
-		chap := Chapter{element, uint32(startSecs * 1000), 0, os.Args[x+1]}
+		chap := Chapter{element, uint32(startSecs), 0, os.Args[x+1]}
 		chaps = append(chaps, chap)
 	}
 
@@ -88,7 +88,7 @@ func main() {
 		if err != nil {
 			log.Fatal("failed parsing final seconds %#v: %v", os.Args[x], err)
 		} else {
-			finalEnd = uint64(finalEnd * 1000)
+			finalEnd = uint64(finalEnd)
 		}
 	}
 
